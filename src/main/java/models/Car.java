@@ -1,25 +1,20 @@
 package models;
 
-public class Car implements DTO {
+public class Car implements DTOInterface {
     private String make;
     private String model;
     private int year;
     private String color;
+    private String vin;
     private int id;
 
-    public Car(String make, String model, int year, String color, int id) {
+    public Car(String make, String model, int year, String color, int id, String vin) {
         this.make = make;
         this.model = model;
         this.year = year;
         this.color = color;
         this.id = id;
-    }
-
-    public Car(String make, String model, int year, String color) {
-        this.make = make;
-        this.model = model;
-        this.year = year;
-        this.color = color;
+        this.vin = vin;
     }
 
     public Car() {
@@ -64,5 +59,17 @@ public class Car implements DTO {
     @Override
     public void setId(Integer id) {
         this.id = id;
+    }
+    //car to string
+    @Override
+    public String toString() {
+        return "Car{" +
+                "make='" + make + '\'' +
+                ", model='" + model + '\'' +
+                ", year=" + year +
+                ", color='" + color + '\'' +
+                ", vin='" + vin + '\'' +
+                ", id=" + id +
+                '}';
     }
 }
